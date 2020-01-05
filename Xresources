@@ -1,0 +1,27 @@
+!#if __has_include(".extend.Xresources")
+!#include ".extend.Xresources"
+!#endif
+
+! ^ The above lines are no comments!
+! Leave them as they are if a file ~/.extend.Xresources is being used on your system.
+! config can be added there or also here below.
+! For comments use "!"
+Rxvt.scrollBar: false
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintslight
+Xft.lcdfilter: lcddefault
+
+Rxvt*background: #2b2b2b
+Rxvt*foreground: #e7e7e7
+Rxvt*pointerColor: #16A085
+Rxvt*faceName: Fixed
+Rxvt*faceSize: 11
+!Rxvt.font: xft:IBM 3270 Semi\\-Narrow:style=Medium:size=12
+Rxvt.font: xft:monofur for Powerline:style=Medium:size=12
+Rxvt.depth:32
+Rxvt.clipboard.autocopy: true
+
