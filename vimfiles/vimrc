@@ -1,0 +1,69 @@
+" Basic Settings
+
+set shell=/bin/bash
+set nocompatible              " Be iMproved, required
+filetype off                  " Required
+set nu                        " Show line numbers
+set clipboard=unnamedplus     " Use the system clipboard
+set hlsearch                  " Highlight search results
+syntax enable                 " Enable syntax highlighting
+filetype indent on            " Enable file type-specific indenting
+set background=dark           " Color scheme
+
+" Vundle Plugin Manager Setup
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'itchyny/vim-gitbranch'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'
+Plugin 'morhetz/gruvbox'
+
+call vundle#end()             " Required
+
+filetype plugin indent on     " Enable file type detection and plugin support
+
+" General Settings
+set autoindent                " Automatically indent new lines
+set smartindent               " Smart auto-indenting on new lines
+set expandtab                 " Convert tabs to spaces
+set tabstop=4                 " Number of spaces a tab counts for
+set shiftwidth=4              " Number of spaces to use for autoindent
+set softtabstop=4             " Number of spaces a tab counts for while editing
+set nowrap                    " Disable line wrapping
+set showmatch                 " Show matching brackets
+set incsearch                 " Incremental search
+set ignorecase                " Case insensitive searching
+set smartcase                 " Case sensitive searching if a capital letter is used
+set undofile                  " Enable persistent undo
+set mouse=a                   " Enable mouse support in all modes
+set cursorline                " Highlight the current line
+set ruler                     " Show the cursor position all the time
+set showcmd                   " Show (partial) command in the last line of the screen
+set wildmenu                  " Command-line completion in enhanced mode
+set visualbell                " Use a visual bell instead of beeping
+set encoding=utf-8            " Set default encoding to UTF-8
+
+" Color Scheme
+colo gruvbox
+
+" Vim Airline Configurations
+let g:airline_section_b = '%{gitbranch#name()} %{strftime("%a %b %d %X")}'
+let g:airline_theme='gruvbox'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
+set laststatus=2
+let g:airline#extensions#branch#enabled = 0
+let g:airline_section_z = airline#section#create(['windowswap', '%3p%% ', 'linenr', ':%3v'])
+
+" Custom Mappings
+imap jj <Esc>
+nnoremap tj :tabnext<CR>
+nnoremap tk :tabprev<CR>
+
+" Additional Plugin-Specific Settings
+" Add any additional plugin configurations here
+
+" Ensure your .vimrc ends with a newline
+
